@@ -12,19 +12,21 @@ public class Controller {
     private Client client;
     Scanner scanner = new Scanner(System.in);
     private int port=0;
+    private String argomento, testo;
 
     @FXML
     protected void sendMail(){
-        client.sendMail(client.createMail("prova", "prima prova mail"));
+        System.out.println("Argomento: ");
+        argomento=scanner.next();
+        System.out.println("testo: ");
+        testo=scanner.next();
+        client.sendMail(client.createMail(argomento, testo));
     }
 
     @FXML
     protected void startConnection(){
-        System.out.println("insert port number (default is 7003): ");
-        do{
-            port = scanner.nextInt();
-        }while(port<0 || port>9999);
-            client.connection(7003);
+        client.connection(7003);
+        changeText("connessione eseguita");
     }
 
     protected void changeText(String text){

@@ -1,6 +1,6 @@
 package com.example.progetto;
 
-public class Mail {
+public class Mail{
     int id, timestamp;
     String argomento, text;
 
