@@ -12,18 +12,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="625.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.officialview.HelloController">
+<Pane prefHeight="625.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.officialview.Controller">
 
-    <HBox alignment="CENTER" layoutX="14.0" layoutY="574.0" prefHeight="37.0" prefWidth="497.0" spacing="15.0">
-        <Button mnemonicParsing="false" onAction="#sendMail" prefHeight="26.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Send" textAlignment="CENTER" />
-        <Button mnemonicParsing="false" onAction="#replyMail" prefHeight="26.0" prefWidth="85.0" style="-fx-background-radius: 4;" text="Reply" textAlignment="CENTER" />
-        <Button mnemonicParsing="false" onAction="#deleteMail" prefHeight="26.0" prefWidth="82.0" style="-fx-background-radius: 4;" text="Forward" textAlignment="CENTER" />
-        <Button disable="true" mnemonicParsing="false" onAction="#forwardMail" prefHeight="26.0" prefWidth="85.0" style="-fx-background-radius: 4;" text="Delete" textAlignment="CENTER" />
+    <HBox alignment="CENTER" layoutX="14.0" layoutY="574.0" prefHeight="37.0" prefWidth="418.0" spacing="15.0">
+        <Button onAction="#sendMail" prefHeight="26.0" prefWidth="77.0" style="-fx-background-radius: 4;" text="Send" textAlignment="CENTER" />
+        <Button onAction="#replyMail" prefHeight="26.0" prefWidth="85.0" style="-fx-background-radius: 4;" text="Reply" textAlignment="CENTER" />
+        <Button onAction="#deleteMail" prefHeight="26.0" prefWidth="82.0" style="-fx-background-radius: 4;" text="Forward" textAlignment="CENTER" />
+        <Button disable="true" onAction="#forwardMail" prefHeight="26.0" prefWidth="85.0" style="-fx-background-radius: 4;" text="Delete" textAlignment="CENTER" />
     </HBox>
 
-    <Pane layoutX="1.0" layoutY="9.0" prefHeight="524.0" prefWidth="497.0">
+    <Pane layoutX="1.0" layoutY="1.0" prefHeight="553.0" prefWidth="418.0">
       <children>
-           <ComboBox layoutX="324.0" layoutY="171.0" opacity="0.75" prefHeight="26.0" prefWidth="148.0" promptText="Select Mail">
+           <TextArea fx:id="text" layoutX="65.0" layoutY="262.0" prefHeight="234.0" prefWidth="330.0" />
+           <TextField fx:id="obj" layoutX="65.0" layoutY="216.0" prefHeight="26.0" prefWidth="330.0" />
+           <TextField fx:id="receiver" layoutX="65.0" layoutY="171.0" prefHeight="26.0" prefWidth="220.0" />
+           <TextField fx:id="sender" layoutX="65.0" layoutY="124.0" prefHeight="26.0" prefWidth="330.0" />
+           <Label layoutX="21.0" layoutY="263.0" prefHeight="17.0" prefWidth="39.0" text="Text:" />
+           <Label layoutX="14.0" layoutY="221.0" text="Object:" />
+           <Label layoutX="7.0" layoutY="176.0" prefHeight="17.0" prefWidth="54.0" text="Receiver:" />
+           <Label layoutX="13.0" layoutY="129.0" text="Sender:" />
+           <ComboBox layoutX="291.0" layoutY="172.0" opacity="0.75" prefHeight="26.0" prefWidth="108.0" promptText="Select Mail">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                       <String fx:value="LO shooter" />
@@ -32,14 +40,6 @@
                   </FXCollections>
                </items>
            </ComboBox>
-           <TextArea fx:id="text" layoutX="65.0" layoutY="262.0" opacity="0.1" prefHeight="234.0" prefWidth="407.0" />
-           <TextField fx:id="sender" layoutX="65.0" layoutY="216.0" opacity="0.1" prefHeight="26.0" prefWidth="407.0" />
-           <TextField fx:id="receiver" layoutX="65.0" layoutY="171.0" opacity="0.1" prefHeight="26.0" prefWidth="249.0" />
-           <TextField fx:id="obj" layoutX="65.0" layoutY="124.0" opacity="0.1" prefHeight="26.0" prefWidth="407.0" />
-           <Label layoutX="21.0" layoutY="263.0" prefHeight="17.0" prefWidth="39.0" text="Text:" />
-           <Label layoutX="14.0" layoutY="221.0" text="Object:" />
-           <Label layoutX="7.0" layoutY="176.0" prefHeight="17.0" prefWidth="54.0" text="Receiver:" />
-           <Label layoutX="13.0" layoutY="129.0" text="Sender:" />
       </children>
     </Pane>
      <Label fx:id="Title1" alignment="CENTER" layoutX="28.0" layoutY="26.0" prefHeight="26.0" prefWidth="443.0" text="Mail list:">
@@ -48,9 +48,9 @@
          </font>
      </Label>
 
-    <Pane layoutX="520.0" layoutY="-1.0" prefHeight="625.0" prefWidth="730.0">
+    <Pane layoutX="415.0" layoutY="-1.0" prefHeight="625.0" prefWidth="835.0">
       <children>
-         <VBox fx:id="griglia" layoutX="-4.0" layoutY="62.0" onMouseClicked="#forwardMail" prefHeight="524.0" prefWidth="730.0">
+         <VBox fx:id="griglia" layoutX="-2.0" layoutY="62.0" onMouseClicked="#forwardMail" prefHeight="562.0" prefWidth="835.0">
 
          </VBox>
       </children></Pane>
