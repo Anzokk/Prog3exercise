@@ -1,9 +1,12 @@
 package com.example.officialview;
 
+import javafx.scene.layout.HBox;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 
-public class CasellaPostaElettronica {
+public class CasellaPostaElettronica implements Callable<ArrayList<HBox>> {
     private String IDUtente;
     private List<Email> emailPersonali;
 
@@ -33,11 +36,10 @@ public class CasellaPostaElettronica {
         this.emailPersonali = emailPersonali;
     }
 
-    public void OutputStoricoEmail (){
-        for(int i=0; i< this.getEmailPersonali().size(); i++) {
-            System.out.println(this.getEmailPersonali().get(i).toString());
-        }
+
+    @Override
+    public ArrayList<HBox> call(){
+        Model m=new Model();
+        return m.boxCreation(getIDUtente());
     }
-
-
 }

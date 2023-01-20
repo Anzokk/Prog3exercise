@@ -12,12 +12,15 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.control.Label;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Paint;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 public class Model {
-
-
 
     public void sendMail(String id, String mittente, String destinatario, String oggetto, String testo){
 
@@ -30,7 +33,7 @@ public class Model {
         try{
             dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
             DocumentBuilder db = dbf.newDocumentBuilder();
-            Document doc = db.parse(new File("/Users/anzo/Desktop/provaLettura.xml"));
+            Document doc = db.parse(new File("/home/anzo/Prog3/Prog3exercise/Progetto Finale - Mail server/provaLettura.xml"));
             doc.getDocumentElement().normalize();
 
             System.out.println("Root Element :" + doc.getDocumentElement().getNodeName());
@@ -105,7 +108,7 @@ public class Model {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource domSource = new DOMSource(document);
-            StreamResult streamResult = new StreamResult(new File("home/andreapollaccia/provaScrittura.xml"));
+            StreamResult streamResult = new StreamResult(new File("/home/anzo/Prog3/Prog3exercise/Progetto Finale - Mail server/provaScrittura.xml"));
 
             transformer.transform(domSource, streamResult);
             System.out.println("Hai costruito un minchia di fila, bravo picciotto");
@@ -115,6 +118,56 @@ public class Model {
             System.out.println("Hai sbagliato coglione");
         }
     }
+
+    public ArrayList<HBox> boxCreation(String nomeAccount) {
+        ArrayList<Email> fileMailbox= this.outputCasella(nomeAccount);
+        ArrayList<HBox> finalGrid=new ArrayList<>();
+        int cont = 0;
+
+        do {
+            HBox box = new HBox();
+            box.setSpacing(20);
+            box.setPrefHeight(50);
+            box.setAlignment(Pos.CENTER);
+            box.setPadding(new Insets(5, 5, 5, 5));
+            box.setBorder(new Border(new BorderStroke(Paint.valueOf("#9E9E9E"),
+                BorderStrokeStyle.SOLID, CornerRadii.EMPTY, BorderWidths.DEFAULT)));
+
+
+            Label labelMitt = new Label();
+            labelMitt.setPrefWidth(150);
+
+            Label labelDest = new Label();
+            labelDest.setPrefWidth(150);
+
+            Label labelOgg = new Label();
+            labelOgg.setPrefWidth(125);
+            labelOgg.setWrapText(true);
+
+            Label labelTxt = new Label();
+            labelTxt.setPrefWidth(160);
+            labelTxt.setWrapText(true);
+
+
+            box.getChildren().add(new Label(fileMailbox.get(cont).getID()));
+            labelMitt.setText(fileMailbox.get(cont).getMittente());
+            box.getChildren().add(labelMitt);
+            labelDest.setText(fileMailbox.get(cont).getDestinatario());
+            box.getChildren().add(labelDest);
+            labelOgg.setText(fileMailbox.get(cont).getOggetto());
+            box.getChildren().add(labelOgg);
+            labelTxt.setText(fileMailbox.get(cont).getTesto());
+            box.getChildren().add(labelTxt);
+            box.getChildren().add(new Label(fileMailbox.get(cont).getDataSpedizione()));
+
+            cont++;
+            finalGrid.add(box);
+        }while(cont< fileMailbox.size());
+        return finalGrid;
+    }
+
+
+
 
     public static void main(String[] args) {
 

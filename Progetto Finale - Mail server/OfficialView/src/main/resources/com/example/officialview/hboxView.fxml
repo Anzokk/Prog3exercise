@@ -50,7 +50,7 @@
 
     <Pane layoutX="415.0" layoutY="-1.0" prefHeight="625.0" prefWidth="835.0">
       <children>
-         <VBox fx:id="griglia" layoutX="-2.0" layoutY="62.0" onMouseClicked="#forwardMail" prefHeight="562.0" prefWidth="835.0">
+         <VBox fx:id="grid" layoutX="-2.0" layoutY="62.0" onMouseClicked="#forwardMail" prefHeight="562.0" prefWidth="835.0">
 
          </VBox>
       </children></Pane>

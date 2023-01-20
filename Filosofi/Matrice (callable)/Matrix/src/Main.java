@@ -28,7 +28,5 @@ public class Main {
             tasks.add(lavoro);
             exec.execute(lavoro);
         }
-
-
     }
 }
