@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<StoricoEmail>
+	<Email id="let0002">
+		<mittente>john.wick@email.com</mittente>
+		<destinatario>lebron.james@email.com</destinatario>
+		<oggetto>prenotazione</oggetto>
+		<testo>Buongiorno LeGM, come stai? Quando giochi a Los Angeles contro Golden State che voglio vedermi una bella partita?</testo>
+		<dataSpedizione>04-01-2023 15:04</dataSpedizione>
+	</Email>
+	<Email id="let0002">
+		<mittente>stephen.curry@email.com</mittente>
+		<destinatario>lebron.james@email.com</destinatario>
+		<oggetto>saluti</oggetto>
+		<testo>Night my boy!</testo>
+		<dataSpedizione>04-01-2023 15:38</dataSpedizione>
+	</Email>
+	<Email id="let0002">
+		<mittente>lebron.james@email.com</mittente>
+		<destinatario>stephen.curry@email.com</destinatario>
+		<oggetto>scemo</oggetto>
+		<testo>La smetti di rompere?</testo>
+		<dataSpedizione>05-01-2023 15:38</dataSpedizione>
+	</Email>
+	<Email id="let0002">
+		<mittente>john.wick@email.com</mittente>
+		<destinatario>lebron.james@email.com</destinatario>
+		<oggetto>Disdetta prenotazione</oggetto>
+		<testo>disdico ciao</testo>
+		<dataSpedizione>05-01-2023 15:38</dataSpedizione>
+	</Email>
+	<Email id="let0002">
+		<mittente>stephen.curry@email.com</mittente>
+		<destinatario>lebron.james@email.com</destinatario>
+		<oggetto>Bello westbrook</oggetto>
+		<testo>Scambio poole ad prendere o lasciare</testo>
+		<dataSpedizione>05-01-2023 15:38</dataSpedizione>
+	</Email>
+</StoricoEmail>
